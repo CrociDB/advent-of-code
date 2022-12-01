@@ -2,9 +2,15 @@
 
 ## Solution
 
-The solution has been implemented in Racket and it's in the file `elf.rkt`. To run it:
+The solution has been implemented in Racket and it's in the file `elf.rkt`. 
+
+Run to get answer 1:
 
 `racket elf.rkt < input`
+
+Run to get answer 1:
+
+`racket elf2.rkt < input`
 
 ## Problem
 
