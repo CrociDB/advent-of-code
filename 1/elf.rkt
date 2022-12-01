@@ -9,6 +9,6 @@
             [b (count-elf (+ b total) maximum)]
             [else
                (if (= 0 total) maximum (count-elf 0 (if (> total maximum) total maximum)))])]
-      [else maximum]))
+      [else (if (> total maximum) total maximum)]))
 
 (count-elf 0 0)
