@@ -15,7 +15,7 @@
 ; seconds exercise
 (define (score2 a b)
   (let ([c (pick-hand a b)])
-  (+ (list-ref (rotate '(3 0 6) (letter-index c)) (letter-index a)) (list-ref '(1 2 3) (letter-index c)))))
+    (+ (list-ref (rotate '(3 0 6) (letter-index c)) (letter-index a)) (list-ref '(1 2 3) (letter-index c)))))
 
 (define (pick-hand a b)
  (list-ref (rotate '("C" "A" "B") (- 3 (letter-index b))) (letter-index a)))
