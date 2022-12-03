@@ -7,6 +7,10 @@ First problem:
 
 `racket rucksack.rkt < input`
 
+Second problem:
+
+`racket rucksack2.rkt < input`
+
 ## Problem
 
 One Elf has the important job of loading all of the rucksacks with supplies for the jungle journey. Unfortunately, that Elf didn't quite follow the packing instructions, and so a few items now need to be rearranged.
