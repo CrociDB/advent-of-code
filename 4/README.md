@@ -4,9 +4,13 @@
 
 The solution for this problem is written in Racket.
 
-How to run solution 1:
+How to run part 1:
 
 `racket camp-cleanup.rkt < input`
+
+Part 1:
+
+`racket camp-cleanup2.rkt < input`
 
 ## Problem 
 
