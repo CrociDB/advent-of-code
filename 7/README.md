@@ -7,6 +7,10 @@ Part 1:
 
 `racket device.rkt < input`
 
+Part 2:
+
+`racket device2.rkt < input`
+
 ## Problem
 
 The problem is described at: https://adventofcode.com/2022/day/7
