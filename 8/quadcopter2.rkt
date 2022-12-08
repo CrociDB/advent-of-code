@@ -7,7 +7,8 @@
         [else matrix]))
 
 (define (max l) (foldl (lambda (x a) (if (> x a) x a)) 0 l))
-(define (takeUntilFirst p l)
+
+(define (take-until-first p l)
   (define met #f)
   (define (predicate x)
     (define oldmet met)
@@ -19,16 +20,16 @@
   (define value (vector-ref (vector-ref m c) l))
   (define (predicate x) (>= x value))
   (list
-    (reverse (takeUntilFirst predicate (reverse (take (vector->list (vector-ref m c)) l))))
-    (takeUntilFirst predicate (drop (vector->list (vector-ref m c)) (+ l 1)))))
+    (reverse (take-until-first predicate (reverse (take (vector->list (vector-ref m c)) l))))
+    (take-until-first predicate (drop (vector->list (vector-ref m c)) (+ l 1)))))
 
 (define (split-column m c l)
   (define value (vector-ref (vector-ref m c) l))
   (define (predicate x) (>= x value))
   (let ([ls (vector->list (vector-map (lambda (mx) (vector-ref mx l)) m))])
     (list
-      (reverse (takeUntilFirst predicate (reverse (take ls c))))
-      (takeUntilFirst predicate (drop ls (+ c 1))))))
+      (reverse (take-until-first predicate (reverse (take ls c))))
+      (take-until-first predicate (drop ls (+ c 1))))))
 
 (define (check-visibility m x y)
   (define w (- (vector-length m) 1))
