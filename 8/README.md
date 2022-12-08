@@ -7,6 +7,10 @@ Part 1:
 
 `racket quadcopter.rkt < input`
 
+Part 2:
+
+`racket quadcopter2.rkt < input`
+
 ## Problem
 
 The problem was described here: https://adventofcode.com/2022/day/8
