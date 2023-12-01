@@ -1,4 +1,4 @@
-# Advent of Code 2022
+# Advent of Code  
 
-These are my solutions for the AoC 2022. I might use different languages for every problem.
+Those are my solutions for the Advent of Code. Currently only 2022 and 2023 editions.
 
