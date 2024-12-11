@@ -5,7 +5,7 @@ data Value where
   Data :: String -> Value
   deriving Show
 
-genIdBlock n = concat $ zipWith (\i b -> [Data (show i), Data b]) [0..(n `div` 2)] (head (replicateM (n `div` 2) ["."]))
+genIdBlock n = concat $ zipWith (\i b -> [Data (show (i `mod` 10)), Data b]) [0..(n `div` 2)] (head (replicateM (n `div` 2) ["."]))
 
 generateBlocks dense = concat $ foldr build [] $ reverse $ zip d (genIdBlock (length d))
   where
@@ -23,6 +23,7 @@ main = do
     input <- getContents
     let disk = generateBlocks $ map digitToInt (filter isDigit input)
     let d = defrag [] disk
+    -- print disk
     print $ foldr (\(a,b) acc -> acc + (a * b)) 0 $ zip (map digitToInt d) [0..length d]
 
 
