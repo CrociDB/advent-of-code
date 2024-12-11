@@ -15,15 +15,17 @@ generateBlocks dense = concat $ foldr build [] $ reverse $ zip d (genIdBlock (le
 removeTrailingSpace xs = reverse $ dropWhile (=='.') $ reverse xs
 
 defrag before [] = before
-defrag before (x:xs) = if x == '.' then defrag (before ++ [last txs]) (init txs) else defrag (before ++ [x]) xs
+defrag before [x] = before ++ [x]
+defrag before (x:xs) = if x == '.' then defrag (before ++ l) it else defrag (before ++ [x]) xs
   where
     txs = removeTrailingSpace xs
+    l = [last txs | not (null txs)]
+    it = if null txs then [] else init txs
 
 main = do
     input <- getContents
     let disk = generateBlocks $ map digitToInt (filter isDigit input)
     let d = defrag [] disk
-    -- print disk
     print $ foldr (\(a,b) acc -> acc + (a * b)) 0 $ zip (map digitToInt d) [0..length d]
 
 
